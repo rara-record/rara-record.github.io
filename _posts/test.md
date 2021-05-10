@@ -1,6 +1,6 @@
 ---
 
-
+layout: post
 title : "Javascript"
 
 date : 2021-05-10
