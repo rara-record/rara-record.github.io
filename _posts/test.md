@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: test 란?
+title: test
 categories: [Javascript]
 excerpt: ' '
 comments: true
