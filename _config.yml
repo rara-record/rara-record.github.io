@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------
 
 # Site
-title: 개발 공부 저장소
+title: Lara Record
 subtitle:
 description:
 author: 김보라
@@ -232,7 +232,7 @@ social_icons:
 
 # Sidebar Avatar
 in directory: /assets/images/me
-#avatar:
+avatar:/assets/images/me
 
 # Table Of Contents in the Sidebar
 toc:
