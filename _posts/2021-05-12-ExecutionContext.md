@@ -284,4 +284,5 @@ multiply = function (a,b) { // 변수 할당부는 원래 자리에
 |  재할당  |    O     |   X   |   O   |
 | 호이스팅 |    O     |   O   |   O   |
 
-const,let도 호이스팅이 된다고 하는데 실제로는 reference error가 발생한다. 그 이유는 무엇일까??
+
+출처 https://velog.io/@iamjoo
