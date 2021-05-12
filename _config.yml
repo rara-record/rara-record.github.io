@@ -231,8 +231,8 @@ social_icons:
   Weibo: weibo
 
 # Sidebar Avatar
-in directory: /assets/images/me
-avatar:/assets/images/me
+# in directory: /assets/images/me
+avatar:/assets/images/me.png
 
 # Table Of Contents in the Sidebar
 toc:
