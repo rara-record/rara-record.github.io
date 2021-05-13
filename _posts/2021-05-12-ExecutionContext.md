@@ -61,9 +61,7 @@ inner 실행컨텍스트가 종료되면 콜스택에서 제거 되고, outer �
 
 **실행 컨텍스트와 콜 스텍** 
 
-![](D:\git\Kaspersky VPN.lnk\assets\images\ExecutionContext\callback.png)
-
-
+![](rara-record.github.io.git/../../assets/images/ExecutionContext/callback.png) 
 > 한 실행 컨텍스트가 콜 스택의 맨 위에 쌓이는 순간 =  현재 실행할 코드에 관여하게 되는 시점
 
 
