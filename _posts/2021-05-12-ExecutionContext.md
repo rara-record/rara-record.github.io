@@ -22,7 +22,6 @@ date: 2021-05-12
 - 📌 **실행 컨텍스트**: 실행할 코드에 제공할 환경 정보들을 모아 놓은 객체
 - 실행 컨텍스트를 구성하는 방법으로는 아래와 같다.
 
-
   - 1) 전역공간
   - 2) eval()함수
   - 3) 함수<br>
@@ -65,7 +64,7 @@ inner 실행컨텍스트가 종료되면 콜스택에서 제거 되고, outer �
 
 <br>
 
-# 실행 컨텍스트 활성화  
+## 실행 컨텍스트 활성화  
 
 **실행 컨텍스트 **활성화** 될 때, 자바스크립트 엔진은 해당 컨텍스트에 관련된 코드들을 실행하는데 필요한 환경정보를 수집하고, 객체에 저장한다. 이 객체는 무엇일까?**
 
@@ -76,16 +75,16 @@ inner 실행컨텍스트가 종료되면 콜스택에서 제거 되고, outer �
 - **📌 ThisBinding:** this 식별자가 바라봐야 할 대상 객체이다.     
 <br>
 
-## **VariableEnvironment**
-
+# **VariableEnvironment**
 담기는 내용은 LexicalEnvironment 와 같지만 최초 실행 시의 스냅샷을 유지한다는 점이 다르다.
 variableEnvironment, LexicalEnvironment 내부에는 environmentRecord와 outer-Environment로 구성되어 있다.
+<br>
+<br>
 
-## **LexicalEnvironment**
-
+# **LexicalEnvironment**
 컨텍스트를 구성하는 환경 정보들을 사전에 접하는 느낌으로 모아 놓는 것이다.
 
-### environmentRecord와 호이스팅
+## environmentRecord와 호이스팅
 
 - environmentRecord에는 **현재 컨텍스트와 관련된 코드의 식별자 정보들이 저장된다.**
   **매개변수 식별자**, 선언한 함수가 있을 경우 **함수 자체**, var로 선언된 **변수의 식별자** 등
@@ -96,10 +95,9 @@ variableEnvironment, LexicalEnvironment 내부에는 environmentRecord와 outer-
 
   > 실행 컨텍스트는 변수 객체를 생성하는 대신 자바스크립트 구동 환경이 별도로 제공하는 객체, 즉 전역 객체(global object)를 활용한다. 전역 객체에는 브라우저의 window, Node.js의 global 객체 등이 있다. 이들은 자바스크립트 내장 객체(native object)가 아닌 호스트 객체(host object)d로 분류된다.
 
-
 <br>
 
-### 호이스팅(hoisting) 규칙
+## 호이스팅(hoisting) 규칙
 - 호이스팅이 되지 않았을 때 출력 값
 
 ```javascript
@@ -115,7 +113,7 @@ a(1);
 ```
 <br>
 
-##### ⚠️ js 엔진 구동방식을 사람 입장에서 이해하고자 코드를 변경 할 것입니다.<br>(!실제 엔진은 이러한 변환과정을 거치지 않습니다!)
+### ⚠️ js 엔진 구동방식을 사람 입장에서 이해하고자 코드를 변경 할 것입니다.<br>(!실제 엔진은 이러한 변환과정을 거치지 않습니다!)
 <br>
 
 ```javascript
@@ -149,9 +147,26 @@ function a(x) {
 
 a(1);
 ```
+
+## **var, const, let 호이스팅**
+
+|          |   var    | const |  let  |
+| :------: | :------: | :---: | :---: |
+|  스코프  | function | block | block |
+|  재선언  |    O     |   X   |   X   |
+|  재할당  |    O     |   X   |   O   |
+| 호이스팅 |    O     |   O   |   O   |
+
+자바스크립트에서 변수는 선언,초기화,할당 3가지 단계를 거쳐서 생성되게 된다.
+- 📌 **선언**: 변수를 실행 컨텍스트의 변수 객체에 등록한다.<br>
+- 📌 **초기화**: 변수를 위한 메모리를 만드는과정, 할당된 메모리에는 `undefined`으로로 초기화한다.<br>
+- 📌 **할당**: `undefined`로 할당된 변수에 다른값을 할당한다.
+<br>
+> var는 선언과 초기화가 동시에 발생하지만, `const`와 `let`은 선언과 초기화가 분리되어 진행되어 아직 메모리 할당이 되지 않아 reference error가 발생하는 것이다.
+
 <br>
 
-# **함수 선언문과 함수 표현식**
+## **함수 선언문과 함수 표현식**
 
 **📌 함수 선언문**(function declaration)
 function 정의부만 존재하고 별도의 할당 명령이 없는 것, 함수명이 정의되야한다.
@@ -226,20 +241,71 @@ a();
 - 수집 대상 2: 호이스팅이 끝난 상태에서의 함수 선언문은 함수명으로 선언한 변수에 함수를 할당 것 처럼 여길수 있다.
 <br>
 
-##### ⚠️ 전역공간에 동명의 함수가 여럿 존재하는 상황이라 하더라도 모든 함수가 **함수 표현식으로 정의**돼 있다면, <br>그 줄에 바로 에러가 검출 되므로 빠른 타이밍에 디버깅을 할 수 있다. 
+#### ⚠️ 전역공간에 동명의 함수가 여럿 존재하는 상황이라 하더라도 모든 함수가 **함수 표현식으로 정의**돼 있다면, 그 줄에 바로 에러가 검출 되므로 빠른 타이밍에 디버깅을 할 수 있다. 
 <br>
 
-# **var, const, let 호이스팅**
+## 스코프 & 스코프 체인, otherEnvironmentRererence
 
-|          |   var    | const |  let  |
-| :------: | :------: | :---: | :---: |
-|  스코프  | function | block | block |
-|  재선언  |    O     |   X   |   X   |
-|  재할당  |    O     |   X   |   O   |
-| 호이스팅 |    O     |   O   |   O   |
+- 📌 **스코프(scope)**: 식별자에 대한 유효 범위이다.<br>
 
+- 📌 **스코프 체인**: 식별자의 유효범위를 안에서부터 바깥으로 차례로 검색해나가는 것을 의미한다.
+> 이를 가능케 하는 것이 LexicalEnvironment의 두 번째 수집 자료 인 **outherEnvironmetReference**이다.
 
+<br>
 
+아래와 같이 **outer** 함수 안에 **inner** 함수가 호출된 경우, inner함수의 outerEnvironmentReference는 outer함수의 LexicalEnvironment을 참조한다.<br>
+<br>
+**→ 무조건 스코프 체인상에서 가장 먼저 발견된 식별자에만 접근 가능함**
+```javascript
+var a = 1;
+var outer = function(){
+	var inner = function(){
+		// var a = 3; (1)
+		console.log(a) // (결과)
+		var a = 3; (2)
+	}
+	inner();
+	console.log(a)
+}
+outer();
+console.log(a) 
+```
+* (1) 처럼 선언과 할당이 (결과)보다 위에 있을 경우엔, "3" 이 출력됨
+* (2) 처럼 hoising으로 선언은 먼저 되고 (결과) 보다 할당이 나중에 될 경우 "undefined" 가 출력됨
+* 만약 (1), (2) 가 주석 처리 되고, inner함수 컨텍스트에 a변수가 없는 경우: **스코프 체이닝을 통해 global 객체까지 해당 변수를 찾는다.**
+  * inner함수 LexicalEnvironment의 environmentRecord에서 a 변수를 서치 → 없다면 아래 로직
+  * inner함수 LexicalEnvironment의 outerEnvironmentReference 즉, outer 함수의 LexicalEnvironment에서 a 변수를 찾음 → 없다면 아래 로직
+  * outer함수 LexicalEnvironment의 outerEnvironmentReference 즉, global 객체의 LexicalEnvironment에서 a 변수를 찾음 → 없다면 "undefined"
+  * 이 경우에는 (결과)에서 "1" 이 출력됨
 
-<br><br>
-참조 https://velog.io/@iamjoo
+> 이와 같이 outerEnvironmentReference는 연결 리스트 형태를 띈다. 선언시점의 LexicalEnvironment만 참조하고 있으므로 가장 가까운 요소부터 차례대로 접근할 수 있고 다른 순서로 접근하는 것은 불가능하다. **무조건 스코프 체인 상에서 가장 먼저 발견된 식별자에만 접근 가능하다.**
+> 
+<br>
+
+## 📚 정리
+* **실행 컨텍스트** : 실행할 코드에 제공할 환경정보들을 모아 놓은 객체
+   * 활성화되는 시점에 variableEnvironment, LexicalEnvironment, ThisBinding의 세가지 정보를 수집한다.<br>
+
+ * variableEnvironment : LexicalEnvironment와 동일한 내용으로 구성되지만, 초기상태를 유지한다.<br>
+* **LexicalEnvironment** : 수시로 변경되는 환경 정보를 담은 객체
+   * **environmentRecord** : 현재 컨텍스트와 관련된 코드의 식별자 정보들이 저장되있는 곳이다.
+      * **Hoisting** : 코드 실행 전에 자바스크립트 엔진이 컨텍스트에서 변수명을 수집하는 것으로 environmentRecord의 수집 과정을 추상화한 개념이다.
+   * **outerEnvironmentReference** : 바로 직전 컨텍스트의 LexicalEnvironment 정보를 참조한다.<br>
+       * **스코프(scope)** : 변수의 유효범위를 의미한다.
+       * **스코프 체이닝(scope chanining)** : 현재 scope, 컨텍스트에서 식별자를 찾을 수 없는 경우 outerEnvironmentReference를 통해 상위 스코프, 컨텍스트에서 식별자를 찾아 가는 방식.
+          * 변수 은닉화(variable shadowing)
+스코프 체이닝의 특성을 이용해, 자식 컨텍스트에 전역 변수 명과 동일한 변수를 선언함으로써 전역 변수 접근을 막는 방식
+
+* **전역변수** : 전역 컨텍스트의 LexicalEnvironment에 담긴 변수이다.
+* **지역변수** : 함수에 의해 생성된 실행 컨텍스트의 변수이다.
+* **함수 선언식**
+  * 실행 컨텍스트가 수집될 때 함수 그 자체가 호이스팅 된다.
+  * 지양하기
+* **함수 표현식** : 실행 컨텍스트가 수집될 때 선언부만 호이스팅 되고, 할당 시점에 함수가 할당된다.
+<br>
+<br>
+<br>
+
+참조 <br>
+https://velog.io/@iamjoo<br>
+https://velog.io/@jscn/02.-%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8
