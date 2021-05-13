@@ -1,29 +1,27 @@
 ---
 layout: post
 title: 실행 컨텐스트
-categories: [javascript]
+categories: [Core JavaScript]
 excerpt: ' '
 comments: true
 share: true
-tags: [javascript]
+tags: [JavaScript]
 date: 2021-05-12
 ---
 
 
 
-## 실행 컨텐스트
 
 
+## 실행 컨텍스트란?
 
-### 1. 실행 컨텍스트란?
-
-#### 스택과 큐
+### 스택과 큐
 
 - **📌 스택(stack)**: 출입구가 하나 뿐인 우물과 같은 데이터 구조이다.
   abcd순서대로 들어가면, 꺼낼때는 d,c,b,a 순이다.
 - 📌 **큐(queue)**: 한쪽은 입력만, 다른 한쪽은 출력만 담당하는 구조이다. (양쪽 모두 입출력 되는 큐도 있음) abcd순으로 저장했다면 꺼낼 때는 abcd순이다.
 - 📌 **실행 컨텍스트**: 실행할 코드에 제공할 환경 정보들을 모아 놓은 객체
-- 📌 실행 컨텍스트를 구성하는 방법으로는 아래와 같다.
+- 실행 컨텍스트를 구성하는 방법으로는 아래와 같다.
   - 1) 전역공간
   - 2) eval()함수
   - 3) 함수
@@ -32,7 +30,7 @@ date: 2021-05-12
 
 
 
-#### 💻  실행 컨텍스트의 순서
+### 💻  실행 컨텍스트의 순서
 
 ```javascript
 let a = 1;  ----------------- (1)
@@ -63,13 +61,14 @@ inner 실행컨텍스트가 종료되면 콜스택에서 제거 되고, outer �
 
 **실행 컨텍스트와 콜 스텍** 
 
-![](C:\Users\O.C User\Desktop\rara-record.github.io\image\callstack.png)
+![](D:\git\Kaspersky VPN.lnk\assets\images\ExecutionContext\callback.png)
+
 
 > 한 실행 컨텍스트가 콜 스택의 맨 위에 쌓이는 순간 =  현재 실행할 코드에 관여하게 되는 시점
 
 
 
-#### 1-3. 실행 컨텍스트 활성화  
+### 실행 컨텍스트 활성화  
 
 **실행 컨텍스트 활성화 될 때, 자바스크립트 엔진은 해당 컨텍스트에 관련된 코드들을 실행하는데 필요한 환경정보를 수집하고, 객체에 저장한다. 이 객체는 무엇일까?**
 
@@ -81,16 +80,16 @@ inner 실행컨텍스트가 종료되면 콜스택에서 제거 되고, outer �
 
 
 
-### 2. VariableEnvironment
+## VariableEnvironment
 
 담기는 내용은 LexicalEnvironment 와 같지만 최초 실행 시의 스냅샷을 유지한다는 점이 다르다.
 variableEnvironment, LexicalEnvironment 내부에는 environmentRecord와 outer-Environment로 구성되어 있다.
 
-### 3. LexicalEnvironment
+## LexicalEnvironment
 
 컨텍스트를 구성하는 환경 정보들을 사전에 접하는 느낌으로 모아 놓는 것이다.
 
-#### 3-1. environmentRecord와 호이스팅
+### environmentRecord와 호이스팅
 
 - environmentRecord에는 **현재 컨텍스트와 관련된 코드의 식별자 정보들이 저장된다.**
   **매개변수 식별자**, 선언한 함수가 있을 경우 **함수 자체**, var로 선언된 **변수의 식별자** 등
@@ -101,7 +100,7 @@ variableEnvironment, LexicalEnvironment 내부에는 environmentRecord와 outer-
 
   > 실행 컨텍스트는 변수 객체를 생성하는 대신 자바스크립트 구동 환경이 별도로 제공하는 객체, 즉 전역 객체(global object)를 활용한다. 전역 객체에는 브라우저의 window, Node.js의 global 객체 등이 있다. 이들은 자바스크립트 내장 객체(native object)가 아닌 호스트 객체(host object)d로 분류된다.
 
-#### 3-2. 호이스팅(hoisting) 규칙
+#### 호이스팅(hoisting) 규칙
 
 **호이스팅이 되지 않았을 때 출력 값**
 
@@ -157,9 +156,38 @@ a(1);
 
 
 
+### 함수 선언문과 함수 표현식
+
+**📌 함수 선언문**(function declaration)
+function 정의부만 존재하고 별도의 할당 명령이 없는 것, 함수명이 정의되야한다.
+
+```javascript
+function a () {}  //  a가 곧 변수명
+a(); // 실행 Ok.
+```
+
+**📌 함수 표현식**(function expression)
+정의한 function을 별도의 변수에 할당하는 것이다.
+
+```javascript
+
+var b = function () {} // 익명 함수 표현식. 변수명 b가 곧 함수명
+b(); //실행 Ok.
+
+var c = function d () {} // 기명 함수 표현식. 변수명은 c, 함수명은 d.
+c(); // 실행 OK.
+d(); // error!
+```
+
+> 과거에는 기명함수 표현식을 많이 사용했었는데, 그 이유는 디버깅시에 익명 함수 표현식은 함수명 undefined, unnamed라고 나왔기 때문이다. 그러나 현재 모든 브라우저들은 익명함수 표현식의 변수명을 함수의 name 프로퍼티에 할당하고 있어서, 굳이 기명함수 사용하지 않아도 된다.
 
 
-##### 💻 **함수 선언에 대한 예제**
+
+💡 함수선언식은 자바스크립트 로딩시점에 변수객체에 함수를 할당하기 때문에 변수객체에 너무 많은 코드를 저장하면 어플리케이션 응답속도가 느려질 수 있다. 그러나 함수 표현식은 runtime시점에서 실행되기 때문에, <br>**함수 표현식 권장!**
+
+
+
+#### 💻 함수 선언문,표현식 호이스팅
 
 예상 하는 값 
 
@@ -200,74 +228,7 @@ a();
 - 변수명과 함수선언의 정보를 위로 끌어올린다. 
 - 변수는 선언부와 할당부로 나누어 선언부만 끌어 올린다.
 - 함수선언은 함수 전체를 끌어올린다. 
--  수집 대상 2: 호이스팅이 끝난 상태에서의 함수 선언문은 함수명으로 선언한 변수에 함수를 할당 것 처럼 여길수 있다.
-
-
-
-#### 3-2. 함수 선언문과 함수 표현식
-
-**📌 함수 선언문**(function declaration)
-function 정의부만 존재하고 별도의 할당 명령이 없는 것, 함수명이 정의되야한다.
-
-```javascript
-function a () {}  //  a가 곧 변수명
-a(); // 실행 Ok.
-```
-
-**📌 함수 표현식**(function expression)
-정의한 function을 별도의 변수에 할당하는 것이다.
-
-```javascript
-
-var b = function () {} // 익명 함수 표현식. 변수명 b가 곧 함수명
-b(); //실행 Ok.
-
-var c = function d () {} // 기명 함수 표현식. 변수명은 c, 함수명은 d.
-c(); // 실행 OK.
-d(); // error!
-```
-
-> 과거에는 기명함수 표현식을 많이 사용했었는데, 그 이유는 디버깅시에 익명 함수 표현식은 함수명 undefined, unnamed라고 나왔기 때문이다. 그러나 현재 모든 브라우저들은 익명함수 표현식의 변수명을 함수의 name 프로퍼티에 할당하고 있어서, 굳이 기명함수 사용하지 않아도 된다.
-
-
-
-💡 함수선언식은 자바스크립트 로딩시점에 변수객체에 함수를 할당하기 때문에 변수객체에 너무 많은 코드를 저장하면 어플리케이션 응답속도가 느려질 수 있다. 그러나 함수 표현식은 runtime시점에서 실행되기 때문에, <br>**함수 표현식 권장!**
-
-
-
-##### 💻 함수 선언문,표현식 호이스팅
-
-```javascript
-console.log(sum(1,2));
-console.log(multiply(3,4));
-
-function sum(a,b) {
-	return a + b;
-}
-
-var multiply = function (a,b) {
-	return a * b;
-}
-```
-
-호이스팅 후
-
-```javascript
-function sum(a,b) { // 함수 선언문은 전체를 호이스팅
-	return a + b;
-}
-
-var multiply; // 변수는 선언부만 끌어올림
-
-
-console.log(sum(1,2));
-console.log(multiply(3,4));
-
-
-multiply = function (a,b) { // 변수 할당부는 원래 자리에
-	return a * b;
-}
-```
+- 수집 대상 2: 호이스팅이 끝난 상태에서의 함수 선언문은 함수명으로 선언한 변수에 함수를 할당 것 처럼 여길수 있다.
 
 
 
@@ -275,7 +236,7 @@ multiply = function (a,b) { // 변수 할당부는 원래 자리에
 
 
 
-#### 3-3. var, const, let 호이스팅
+### var, const, let 호이스팅
 
 |          |   var    | const |  let  |
 | :------: | :------: | :---: | :---: |
@@ -283,6 +244,9 @@ multiply = function (a,b) { // 변수 할당부는 원래 자리에
 |  재선언  |    O     |   X   |   X   |
 |  재할당  |    O     |   X   |   O   |
 | 호이스팅 |    O     |   O   |   O   |
+
+
+
 
 
 출처 https://velog.io/@iamjoo
