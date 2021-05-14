@@ -5,7 +5,7 @@ categories: [JavaScript]
 excerpt: ' '
 comments: true
 share: true
-tags: [JavaScript]
+tags: [this][method]
 date: 2021-05-14
 ---
 
