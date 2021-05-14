@@ -1,3 +1,13 @@
+---
+layout: post
+title: 메서드와 this
+categories: [JavaScript]
+excerpt: ' '
+comments: true
+share: true
+tags: [JavaScript]
+date: 2021-05-14
+---
 
 # **메서드와 this**
 
