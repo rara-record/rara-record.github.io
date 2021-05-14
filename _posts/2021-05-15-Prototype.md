@@ -48,11 +48,8 @@ Student.prototype.study = function ( subject ) {
 }
 
 const s1 = new Student ('김보라', '1993-01-20', '12345234');
-const s2 = new Student ('김코코', '2016-01-01', '144654');
 console.log(s1);    // Student {name: "김보라", birthday: "1993-01-20"}
-console.log(s2);    // Student {name: "김코코", birthday: "2016-01-01"}
 s1.study('수학');   // 김보라 학생이 수학를 공부합니다.
-s2.study('영어');   // 김코코 학생이 영어를 공부합니다.
 ```
 
 > 💡 객체생성자함수의 prototype속성에 함수를 만들어놓으면 같은 객체생성자함수로 만들어진 모든 객체들이 메써드를 공유하게 된다.
