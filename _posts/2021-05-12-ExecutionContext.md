@@ -306,6 +306,6 @@ console.log(a)
 <br>
 <br>
 
-참조 <br>
+[참조] <br>
 https://velog.io/@iamjoo<br>
 https://velog.io/@jscn/02.-%EC%8B%A4%ED%96%89%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8
