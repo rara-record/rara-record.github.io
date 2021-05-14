@@ -6,8 +6,9 @@ excerpt: ' '
 comments: true
 share: true
 tags: [JavaScript],[this],[method]
-date: 2021-05-12
+date: 2021-05-14
 ---
+
 
 # 메서드와 this
 
