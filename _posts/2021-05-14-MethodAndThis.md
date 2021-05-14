@@ -1,3 +1,14 @@
+---
+layout: post
+title: 메서드와 this
+categories: [JavaScript]
+excerpt: ' '
+comments: true
+share: true
+tags: [JavaScript],[method],[this]
+date: 2021-05-14
+---
+
 # 메서드와 this
 
 객체는 사용자(user), 주문(order) 등과 같이 실제 존재하는 개체(entity)를 표현하고자 할 때 생성됩니다.
