@@ -2,7 +2,7 @@
 
 layout: post
 
-title: 실행 컨텐스트
+title: 메서드와 this
 
 categories: [JavaScript]
 
