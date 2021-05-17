@@ -25,8 +25,8 @@ const Student = function(name, birthday) {
         console.log (`${this.name} 학생이 ${subject}를 공부합니다.`);
     }
 }
-const s1 = new Student ('김보라', '1993-01-20', '12345234');
-console.log(s1);    // Student {name: "김보라", birthday: "1993-01-20", study: ƒ}
+const s1 = new Student ('김보라', '2021-00-00', '12345234');
+console.log(s1);    // Student {name: "김보라", birthday: "2021-00-00", study: ƒ}
 s1.study('수학');   // 김보라 학생이 수학를 공부합니다.
 ```
 
@@ -47,8 +47,8 @@ Student.prototype.study = function ( subject ) {
     console.log (`${this['name']} 학생이 ${subject}를 공부합니다.`);
 }
 
-const s1 = new Student ('김보라', '1993-01-20', '12345234');
-console.log(s1);    // Student {name: "김보라", birthday: "1993-01-20"}
+const s1 = new Student ('김보라', '2021-00-00', '12345234');
+console.log(s1);    // Student {name: "김보라", birthday: "2021-00-00"}
 s1.study('수학');   // 김보라 학생이 수학를 공부합니다.
 ```
 
