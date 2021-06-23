@@ -1,6 +1,6 @@
 ---
 layout: post
-title: requestAnimationFrame() 메소드
+title: window.requestAnimationFrame() 메소드
 categories: [JavaScript]
 excerpt: ' '
 comments: true
@@ -10,7 +10,7 @@ date: 2021-06-23
 ---
 
 
-# requestAnimationFrame() 메소드
+# window.requestAnimationFrame() 메소드
 
 
 
