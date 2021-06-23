@@ -1,3 +1,15 @@
+---
+layout: post
+title: requestAnimationFrame() 메소드
+categories: [JavaScript]
+excerpt: ' '
+comments: true
+share: true
+tags: [JavaScript]
+date: 2021-06-23
+---
+
+
 # requestAnimationFrame() 메소드
 
 
