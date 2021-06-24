@@ -42,8 +42,7 @@ window.requestAnimationFrame(frame);
 
 > 지정한 요소는 영원히 1프레임마다 0.1px씩 오른쪽으로 움직일 것이다.
 
-💡 특정한 시기에 멈추고 싶다면?
-
+💡 특정한 시기에 멈추고 싶다면? 
 - 분기문을 써주면 된다.
 
 ```javascript
@@ -57,9 +56,7 @@ function frame() {
 window.requestAnimationFrame(frame);
 ```
 
-
-
-### requestAnimationFrame()을 사용하는 이유
+### 💡 requestAnimationFrame()을 사용하는 이유
 
 - **백그라운드 동작 및 비활성화시 중지(성능 최적화)**
 
@@ -118,7 +115,7 @@ window.requestAnimationFrame(step);
 
 **cancelAnimationFrame() 알아보기**
 
-- requestAnimationFrame()를 취소하는 방법으로 **cancelAnimationFrame()**를 사용한다. 
+- requestAnimationFrame()를 취소하는 방법으로 cancelAnimationFrame()를 사용한다. 
 
 - 마치 setTimeout()의 clearTimeout()처럼 동일하게 사용하고 동작한다.
 
