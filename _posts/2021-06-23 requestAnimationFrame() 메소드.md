@@ -10,7 +10,7 @@ date: 2021-06-23
 ---
 
 
-# window.requestAnimationFrame() 메소드
+# requestAnimationFrame
 
 
 
