@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 비동기함수
-categories: [JavaScript]
+categories: [TIL]
 excerpt: ' '
 comments: true
 share: true
