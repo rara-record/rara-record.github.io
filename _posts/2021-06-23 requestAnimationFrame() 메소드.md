@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 비동기함수
+title: requestAnimationFrame()
 categories: [TIL]
 excerpt: ' '
 comments: true
@@ -10,11 +10,8 @@ date: 2021-06-23
 ---
 
 
-# requestAnimationFrame()
-
-
-
-## window.requestAnimationFrame() : 비동기 함수
+# window.requestAnimationFrame()
+: 비동기함수
 
     requestAnimationFrame(반복할 함수)
 
