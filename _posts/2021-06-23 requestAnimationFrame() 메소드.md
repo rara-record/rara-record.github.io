@@ -1,6 +1,6 @@
 ---
 layout: post
-title: window.requestAnimationFrame() 메소드
+title: 비동기함수
 categories: [JavaScript]
 excerpt: ' '
 comments: true
