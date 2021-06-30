@@ -22,7 +22,7 @@ date: 2021-06-23
 
 * window.setInterval 함수와 다른 점은 **스스로 반복해서 호출하지 않는다**는 점이다.
 * 기본적으로는 1초에 60번, 보통은 모니터에 주사율에 맞추어 함수를 실행하게 되어있다.
-* **💡** 스스로를 반복 호출하지 않기 때문에, window requestAnimationFrame 함수로 다음 함수를 반복하려면, **재귀적으로 window.requestAnimationFrame 함수를 다시 호출해 줘야 한다.**
+* 💡스스로를 반복 호출하지 않기 때문에, window requestAnimationFrame 함수로 다음 함수를 반복하려면, **재귀적으로 window.requestAnimationFrame 함수를 다시 호출해 줘야 한다.**
 
 ###  💻 기본적인 사용법
 
