@@ -11,7 +11,7 @@ date: 2021-06-23
 
 
 # window.requestAnimationFrame()
-: 비동기함수
+비동기함수
 
     requestAnimationFrame(반복할 함수)
 
