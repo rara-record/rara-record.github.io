@@ -1,3 +1,13 @@
+---
+layout: post
+title: requestAnimationFrame()
+categories: [TIL]
+excerpt: ' '
+comments: true
+share: true
+tags: [JavaScript]
+date: 2021-07-01
+---
 
 
 #	JAVASCRIPT ON THE BROWSER
