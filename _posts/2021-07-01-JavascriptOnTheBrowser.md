@@ -1,6 +1,6 @@
 ---
 layout: post
-title: requestAnimationFrame()
+title: JAVASCRIPT ON THE BROWSER
 categories: [TIL]
 excerpt: ' '
 comments: true
