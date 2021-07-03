@@ -1,11 +1,13 @@
+---
 layout: post
-title: Conditionals 
+title: Conditionals
 categories: [TIL]
 excerpt: ' '
 comments: true
 share: true
 tags: [JavaScript]
-date: 2021-07-01
+date: 2021-07-02
+---
 
 # Conditionals (조건문)
 
