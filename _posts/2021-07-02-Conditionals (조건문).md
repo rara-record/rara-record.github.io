@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JAVASCRIPT ON THE BROWSER
+title: Conditionals
 categories: [TIL]
 excerpt: ' '
 comments: true
