@@ -1,3 +1,15 @@
+---
+layout: post
+title: LoginEvents2
+categories: [TIL]
+excerpt: ' '
+comments: true
+share: true
+tags: [JavaScript]
+date: 2021-07-05
+---
+
+
 # Login Event2
 
 1. 이벤트로부터 얻을 수 있는 다양한 정보가 존재한다.
