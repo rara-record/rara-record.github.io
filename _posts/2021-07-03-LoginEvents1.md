@@ -18,8 +18,8 @@ date: 2021-07-0.
 3. HTML : required maxliength = "글자수"
 4. HTML : placeholder : input 내용의 안내문구
 5. input의 유효성 검사를 작동시키기 위해서는, input이 form 안에 있어야한다.
-6. form안에 button을 누르거나, type이 submit인 input을 클릭 or 엔터를 눌렀을때, form이 **자동으로 submit되고, 페이지가 새로고침 된다.** (form의 기본동작)
-7. argument.preventDefault() : 브라우저의 기본 동작을 막아준다.
+6. **form의 기본동작 : form이 자동으로 submit되고, 페이지가 새로고침 된다.** (form안에 button을 누르거나, type이 submit인 input을 클릭 or 엔터를 눌렀을때)
+7. 브라우저의 기본 동작을 막아준다. : argument.preventDefault() : 
 
 <br>
 
@@ -29,7 +29,7 @@ const loginInput = document.querySelector("#login-form input");
 
 function onLoginSubmit(ev) {
   ev.preventDefault();
-  console.log(tomato);
+  console.log(ev);
 }
 loginForm.addEventListener("submit", onLoginSubmit);
 ```
