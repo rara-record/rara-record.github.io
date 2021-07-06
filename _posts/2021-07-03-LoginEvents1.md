@@ -1,12 +1,12 @@
 ---
 layout: post
-title: LOGIN
+title: LoginEvents1
 categories: [TIL]
 excerpt: ' '
 comments: true
 share: true
 tags: [JavaScript]
-date: 2021-07-0.
+date: 2021-07-03
 ---
 
 # LOGIN
@@ -15,11 +15,13 @@ date: 2021-07-0.
 
 1. HTML에서 input에 value를 선입력 할 수도 있다.
 2. input.value : input의 내용을 가져옴
-3. HTML : required maxlength = "글자수"
+3. HTML : required maxliength = "글자수"
 4. HTML : placeholder : input 내용의 안내문구
 5. input의 유효성 검사를 작동시키기 위해서는, input이 form 안에 있어야한다.
 6. **form의 기본동작 : form이 자동으로 submit되고, 페이지가 새로고침 된다.** (form안에 button을 누르거나, type이 submit인 input을 클릭 or 엔터를 눌렀을때)
 7. 브라우저의 기본 동작을 막아준다. : argument.preventDefault() : 
+
+<br>
 
 ```javascript
 const loginForm = document.querySelector("#login-form");
