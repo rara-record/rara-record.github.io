@@ -3,8 +3,6 @@ const toDoInput = toDoForm.querySelector("input");
 // const toDoInput = document.querySelector(#todo-form input);
 const toDoList = document.getElementById("todo-list");
 
-const array 
-
 // Draw todo list
 // 4. span에 newTodo라는 이름으로 받은 매개변수에 저장된 value를 innertext하고, 
 // 5. button 만듬
