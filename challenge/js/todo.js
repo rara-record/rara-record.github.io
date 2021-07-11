@@ -49,6 +49,7 @@ function handleToDoSubmit(event) {
   const newTodo = toDoInput.value; // 복사해서 저장하고
   toDoInput.value = "";           // input.value를 비움
   paintToDo(newTodo);
+  saveToDos();
 }
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
@@ -58,3 +59,8 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 // 2. 새로고침해도 toDoList들이 사라지지 않아야한다. (localStroage) 
 // 3. toDoList를 지울 수 있어야 한다. 
 // 4. btn을 클릭했을때, 그 btn이 속한 li만 지워야한다. (어떤 li를 지워야 하는지 알아야한다.)
+const toDos = [];
+
+function saveToDos() {
+  localStorage.setItem("todos", JSON.stringify(toDos));
+}
