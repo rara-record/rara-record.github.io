@@ -1,5 +1,5 @@
-# 공부 블로그 post
-https://rara-record.github.io/
+# 깃허브 블로그
+- https://rara-record.github.io/
 
 - 자칫 잊어버리기 쉬운 지식들을 정리하는 공간입니다.
 
@@ -8,3 +8,5 @@ https://rara-record.github.io/
 - 참고한 사이트, 책, 동영상과 같은 자료들은 Refereces에 꼭 표기합니다.
 
 - 빠르게 참고할 수 있도록 최대한 간결하게 정리합니다.
+- https://rara-record.github.io
+- - 노마드코더 자바스크립트 클론코딩 미니 프로젝트입니다.
