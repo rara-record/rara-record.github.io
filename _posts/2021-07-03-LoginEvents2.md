@@ -31,7 +31,7 @@ date: 2021-07-05
 ## Saving Value (Username)
 
 1. localStroage API는 우리가 브라우저에 뭔가를 저장할 수 있게 해준다. 그래서 나중에 가져다 쓸 수 있다.
-2. **localStroage API method :  { key : value } **
+2. localStroage API method :  { key : value } 
    1. **localStroage.setItem() : lacal stroage에 정보를 저장**
    2. **localStroage .getItem() : localStroage에 저장한 key에 해당하는 value를 불러온다.**
    3. localStroage .removeItem() : localStroage에 저장한 값 삭제
