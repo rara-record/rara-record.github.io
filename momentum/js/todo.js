@@ -3,8 +3,7 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 const toDos = [];
 
-// save todo
-//toDos array의 내용을 localStorage에 넣는다
+// save todo : toDos array의 내용을 localStorage에 넣는다
 function saveToDos() {
   localStorage.setItem("todos", JSON.stringify(toDos));
 }
