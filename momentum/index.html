@@ -4,12 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="http://example.com/favicon.png"/>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <title>Momentum App</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <ul class="left">
+          <li class="city"></li>
+          <li class="temp"></li>
+          <li class="humidity"></li>
+        </ul>
+        <div class="right">
+          <span class="label">이름을 등록해보세요! 👉</span>
+          <form class="name">
+            <input type="text" class="name" placeholder="_">
+          </form>
+          <button class="reset hidden">초기화</button>
+          <span class="time"></span>
+
+        </div>
+      </nav>
+    </header>
+    <main></main>
+    <div class="loading"></div>    
+
+    <!--
     <h2 id="clock">00:00:00</h2>
-    <div id="date"></div>
+      <div id="date"></div>
     <form class="hidden" id="login-form">
       <input
         required
@@ -29,15 +53,10 @@
       <span></span>
     </div>
     <div id="weather">
-      <span>Mist / 24.35</span>
-      <span>Gimpo-si</span>
+      <span></span>
+      <span></span>
     </div>
-
-    <script src="js/greetings.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
-    <script src="js/todo.js"></script>
-    <script src="js/weather.js"></script>
+     -->
+     <script src="nav.js"></script>
   </body>
 

@@ -3,21 +3,24 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos"
 
+let toDos = [];
 
+// save todos
+// toDos배열에, newTodoObj를 담아 localStorage에 저장한다.
+function saveToDos() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+}
 
 // Draw todo list
-// 4. span에 newTodo라는 이름으로 받은 매개변수에 저장된 value를 innertext하고, 
-// 5. button 만듬
-// 6. button에 text입력
-// if) 6-1. button 클릭시 이벤트 발생, deleteToDo호출
-// 7. li 밑에 span추가
-// 8. li 밑에 btn 추가
-// 9. 마지막으로 ul에 li추가
+// 4-2. span에 newTodo라는 매개변수로 받은, newTodoObj안의 text를 innertext하고, 
+// 4-3. button에 text입력
+// if) 4-3-1 button 클릭시 이벤트 발생, deleteToDo호출
+// 4-4. li 밑에 span추가 => li 밑에 btn 추가 => 마지막으로 ul에 li추가
 function paintToDo(newTodo) {
   const li = document.createElement("li"); 
+  li.id = newTodo.id;  // li에 id를 부여한다
   const span = document.createElement("span");
-
-  span.innerText = newTodo; 
+  span.innerText = newTodo.text; // newTodoObj의 toDoInput.value
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", deleteToDo);
@@ -27,39 +30,68 @@ function paintToDo(newTodo) {
 }
 
 // Delete todo list
-// 6-2. event에 대한 정보를 매개변수로 받음
+// 4-3-2. event에 대한 정보를 매개변수로 받음
 function deleteToDo(event) {
-  // target은 클릭된 HTML element이다. 즉 <button>❌</button>
+  /*
+  target은 클릭된 HTML element이다. 즉 <button>❌</button>
   console.log(event.target); 
-  // console.dir target의 property들의 정보를 알 수 있는데,
-  console.dir(event.target); 
-  // 그 중에서 parentElement property는 target(클릭된 element)의 부모다. 
-  console.log(event.target.parentElement); 
 
-  // 6-3. 즉 클릭된 btn의 li
-  const parentOfTarget = event.target.parentElement;
-  // 6-4. 지워준다
-  parentOfTarget.remove();
+  console.dir target의 property들의 정보를 알 수 있는데,
+  console.dir(event.target); 
+
+  그 중에서 parentElement property는 target(클릭된 element)의 부모다. 
+  console.log(event.target.parentElement); 
+  */
+
+  // 4-3-3. 즉 클릭된 btn의 li
+  const li = event.target.parentElement;
+  // 4-3-4. 지워준다 (화면)
+    li.remove();
+  // 4-3-5. 클릭한 li.id와 다른 toDo는 남긴다. (localStorage)
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  // 4-3-6. 삭제 후 저장 꼭!
+  saveToDos();
 }
 
 // Input submit
-// 1. handleToDoSubmit 안에서, 
-// 2. newTodo로 저장해놓은 Input의 value를, 인자로 받아서 paintToDo함수를 호출하게 되면,
-// 3. paintToDo에 Input의 value값이 보내진다.
+// 1. submit되면, input의 value값 미리 복사 : newTodo로 저장해두고 비워둠
+// 2. newTodoObj을 만들어서, newTodo와, 고유id를 저장
+// 3. toDos에 newTodoObj push
+// 4-1. paintToDo에 newTodoObj를 넘김
+// 4.localStorage에 newTodoObj를 추가 하기위해 saveToDos호출
 function handleToDoSubmit(event) {
   event.preventDefault();
-  const newTodo = toDoInput.value; // 복사해서 저장하고
-  toDoInput.value = "";           // input.value를 비움
-  paintToDo(newTodo);
+  const newTodo = toDoInput.value; 
+  toDoInput.value = "";  
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  } 
+  toDos.push(newTodoObj);
+  paintToDo(newTodoObj);
+  saveToDos();
 
 }
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
+// 새로고침 했을때 이전 데이터가 남아있게
+// localStorage에 저장된 newTodoObj를 불러온다.
+const savedToDos = localStorage.getItem(TODOS_KEY);
+if (savedToDos !== null) {
+  // 배열로 바꿈
+  const parsedToDos  = JSON.parse(savedToDos);
+  // 이전 값 유지하기.
+  toDos = parsedToDos; 
+  // 불러 온 todo들을 각각 순회하면서 paint함수 호출
+  parsedToDos.forEach(paintToDo); 
+}
 
 
-// Todo List
-// 1. input에 내용을 입력하고 value값이 submit되면, todo list가 나타나야 한다.
-// 2. toDoList를 지울 수 있어야 한다. 
-// 3. btn을 클릭했을때, 그 btn이 속한 li만 지워야한다. (어떤 li를 지워야 하는지 알아야한다.)
-// 4. 새로고침해도 toDoList들이 사라지지 않아야한다. (localStroage) 
+/*
+const arr = [1234, 5454, 223, 122, 45, 6776, 334]
+function sexyfilter(x) { return x <= 1000 }
+console.log(arr.filter(sexyfilter));
+*/
+
+
 
