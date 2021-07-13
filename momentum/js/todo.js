@@ -7,6 +7,7 @@ let toDos = [];
 
 // save todos
 // toDos배열에, newTodoObj를 담아 localStorage에 저장한다.
+// save todo : toDos array의 내용을 localStorage에 넣는다
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
