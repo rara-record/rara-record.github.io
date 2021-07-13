@@ -1,13 +1,9 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
-const toDos = [];
+const TODOS_KEY = "todos"
 
-// save todo
-//toDos array의 내용을 localStorage에 넣는다
-function saveToDos() {
-  localStorage.setItem("todos", JSON.stringify(toDos));
-}
+
 
 // Draw todo list
 // 4. span에 newTodo라는 이름으로 받은 매개변수에 저장된 value를 innertext하고, 
@@ -54,11 +50,11 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value; // 복사해서 저장하고
   toDoInput.value = "";           // input.value를 비움
-  toDos.push(newTodo);
   paintToDo(newTodo);
-  saveToDos();
+
 }
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
 
 
 // Todo List
