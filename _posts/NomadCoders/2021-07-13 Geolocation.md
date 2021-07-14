@@ -1,3 +1,14 @@
+---
+layout: post
+title: Math.random(), append, appendChild
+categories: [TIL]
+excerpt: ' '
+comments: true
+share: true
+tags: [JavaScript]
+date: 2021-07-13
+---
+
 # Geolocation 
 
 1. getCurrentPosition()는 현재 위치를 가져온다.
