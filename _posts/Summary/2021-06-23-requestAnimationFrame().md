@@ -1,7 +1,7 @@
 ---
 layout: post
 title: requestAnimationFrame()
-categories: [TIL]
+categories: [JavaScript]
 excerpt: ' '
 comments: true
 share: true
