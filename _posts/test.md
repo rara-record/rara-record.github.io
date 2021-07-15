@@ -9,7 +9,7 @@ tags: [JavaScript]
 date: 2021-07-15
 ---
 
-# Geolocation 
+# test
 
 1. getCurrentPosition()는 현재 위치를 가져온다.
 
