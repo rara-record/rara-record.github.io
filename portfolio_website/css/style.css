@@ -1,6 +1,9 @@
 
-img {
+#home img {
     width: 350px;
     height: 430px;
 }
+
+.jop img {
+    width: 100px;
 }
