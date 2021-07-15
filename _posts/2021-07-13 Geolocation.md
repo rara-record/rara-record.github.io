@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Math.random(), append, appendChild
+title: Geolocation
 categories: [TIL]
 excerpt: ' '
 comments: true
