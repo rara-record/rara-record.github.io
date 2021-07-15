@@ -1,4 +1,4 @@
-# 깃허브 블로그
+# 깃허브 블로그 / 페이지
 
 ## https://rara-record.github.io/
 
