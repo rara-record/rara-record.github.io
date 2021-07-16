@@ -13,4 +13,4 @@
 ## https://rara-record.github.io/momentum/
 - 노마드코더 자바스크립트 클론코딩 미니 프로젝트입니다.
 ## https://rara-record.github.io/portfolio_website
-- 드림코딩 자바스크릅트 포트폴리오 클론 코딩 미니 프로젝트입니다.
+- 드림코딩 자바스크트 포트폴리오 클론 코딩 미니 프로젝트입니다.
