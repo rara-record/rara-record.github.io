@@ -15,4 +15,4 @@
 
 
 ## https://github.com/rara-record/rara-record.github.io/tree/master/portfolio_website
-- 드림코딩 자바스크트 포트폴리오 클론 코딩 미니 프로젝트입니다.
+- 드림코딩 자바스크립트 포트폴리오 클론 코딩 미니 프로젝트입니다.
