@@ -1,7 +1,7 @@
 ---
 layout: post
 title: data structure
-categories: [TIL]
+categories: [Reference]
 excerpt: ' '
 comments: true
 share: true
