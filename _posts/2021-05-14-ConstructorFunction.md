@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 객체 생성자 함수
-categories: [JavaScript]
+categories: [Reference]
 excerpt: ' '
 comments: true
 share: true

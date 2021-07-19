@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 메서드와 this
-categories: [JavaScript]
+categories: [Reference]
 excerpt: ' '
 comments: true
 share: true

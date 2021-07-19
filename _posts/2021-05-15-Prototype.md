@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 프로토타입
-categories: [JavaScript]
+categories: [Reference]
 excerpt: ' '
 comments: true
 share: true
