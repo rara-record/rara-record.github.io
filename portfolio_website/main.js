@@ -95,18 +95,3 @@ workBtnContainer.addEventListener("click", (e) => {
       projectContainer.classList.remove("anim-out");
     }, 300);
   });
-
-
-
-
-/*
-수직 스크롤을 얼마나 했는지 (내릴수록 커진다) 
-const scrollY = window.scrollY; 
-
-절대좌표 값 
-const absolutePos = scrollY + posFromTop; 
-
-
-해당요소가 뷰포트로부터 얼마나 떨어져 있는지 (내릴수록 작아진다) 
-const posFromTop = contactContainer.getBoundingClientRect().top; 
-*/
