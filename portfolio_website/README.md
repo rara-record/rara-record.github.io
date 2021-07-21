@@ -10,7 +10,7 @@ HTML, CSS, Vanilla JS, 반응형 포트폴리오 웹사이트
 ## 기능
 
 - window.scrollY, clientHeight를 활용한 background 넣기 & opacity 조절
-- event.target, 그리고 data attribute를 활용한 메뉴 이동 
+- event.target 그리고 data attribute를 활용한 메뉴 이동 
 - Navbar toggle 버튼
 - scrollIntoView 함수 활용 scroll smooth하게 만들기
 - 버튼 클릭했을때 아이템 필터링 해주어 해당 요소만 보여주기
