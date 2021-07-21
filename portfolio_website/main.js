@@ -25,8 +25,41 @@ homeContactBtn.addEventListener("click", () => {
   scrollIntoView("#contact");
 });
 
+// 스크롤 내릴 수록 home 투명도 낮아짐
+const home = document.querySelector(".home__container");
+const homeHehgith = home.clientHeight;
+
+document.addEventListener("scroll", () => {
+  home.style.opacity = 1 - window.scrollY / homeHehgith;
+})
+
+
+
 
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior: "smooth", block: "center"});
-}
+};
+
+
+
+
+
+
+
+
+/* 
+수직 스크롤을 얼마나 했는지 (내릴수록 커진다) 
+const scrollY = window.scrollY; 
+
+절대좌표 값 
+const absolutePos = scrollY + posFromTop; 
+
+
+해당요소가 뷰포트로부터 얼마나 떨어져 있는지 (내릴수록 작아진다) 
+const posFromTop = contactContainer.getBoundingClientRect().top; 
+
+https://nykim.work/56
+https://codepen.io/eddyerburgh/pen/VaVraj
+
+*/
