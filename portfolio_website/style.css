@@ -148,13 +148,12 @@ p {
 
 /* Home */
 #home {
-  background: url('imgs/home-background.png') center/cover no-repeat;
+  background: url("imgs/home-background.png") center/cover no-repeat;
   text-align: center;
+  padding: 40px;
+  padding-top: 120px;
 }
 
-.home__container {
-  padding: 40px;
-}
 
 .home__avatar {
   width: 250px;
@@ -484,7 +483,7 @@ p {
 }
 
 .contact__links i {
-  transition: all var(--animation-duration) ease-in;
+  transition: all var(--animation-duration) ease;
 }
 
 
@@ -560,11 +559,6 @@ p {
     padding-top: 45px;
   }
 
-  .home__avatar {
-    margin-top: 30px;
-  }
-  
-
   .about__majors {
     flex-direction: column;
     margin-top: 30px;
@@ -603,8 +597,8 @@ p {
   }
 
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
   }
 
   .testimonial__avatar:nth-child(odd),
