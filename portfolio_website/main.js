@@ -53,14 +53,35 @@ function scrollIntoView(selector) {
   scrollTo.scrollIntoView({behavior: "smooth", block: "center"});
 };
 
+// 프로젝트 버튼을 클릭했을때
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener("click", (event) => {
+    // 버튼을 클릭했을때의 data-filter와, span을 클릭했을때 data-filter
+    const filter = event.target.dataset.filter ||  event.target.parentNode.dataset.filter;
+    if (filter == null) {
+      return;
+    }
+
+    projectContainer.classList.add("anim-out");
+    setTimeout(() => {
+    // 프로젝트를 하나하나 가져와서 필터링 해준다.
+      projects.forEach((project) => {
+        if (filter === "*" || filter === project.dataset.type) {
+          project.classList.remove("invisible");
+        } else {
+          project.classList.add("invisible");
+        }
+      });
+      projectContainer.classList.remove("anim-out");
+    }, 300);
+  });
 
 
 
 
-
-
-
-/* 
+/*
 수직 스크롤을 얼마나 했는지 (내릴수록 커진다) 
 const scrollY = window.scrollY; 
 
@@ -70,8 +91,4 @@ const absolutePos = scrollY + posFromTop;
 
 해당요소가 뷰포트로부터 얼마나 떨어져 있는지 (내릴수록 작아진다) 
 const posFromTop = contactContainer.getBoundingClientRect().top; 
-
-https://nykim.work/56
-https://codepen.io/eddyerburgh/pen/VaVraj
-
 */
