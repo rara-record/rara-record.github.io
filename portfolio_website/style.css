@@ -119,23 +119,22 @@ p {
 
 .navbar__menu {
   display: flex;
+  margin: 10px;
 }
 
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
   color: var(--color-white);
+  border: 1px solid transparent;
   cursor: pointer;
 }
 
-.navbar__menu__item.active {
-  border: 1px solid white;
-  border-radius: var(--size-border-radius);
-}
-
 .navbar__menu__item:hover {
+  border: 1px solid white;
   background-color: var(--color-dark-pink);
   border-radius: var(--size-border-radius);
+  transition: all var(--animation-duration) ease;
 }
 
 .navbar__toggle-btn {
@@ -177,11 +176,16 @@ p {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+  transition: all var(--animation-duration) ease;
+}
+
+.home__contact:hover {
+  background-color: var(--color-dark-pink);
 }
 
 /* Section common */
 .section {
-  padding: 50px;
+  padding: 55px;
   text-align: center;
   margin: auto;
 }
@@ -313,22 +317,23 @@ p {
 }
 
 .category__btn {
+  position: relative;
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-pink);
   color: var(--color-white);
 }
 
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 5px;
 }
 
 .category__count {
@@ -339,9 +344,9 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
-  top: -20px;
-  left: 4px;
+  position: absolute;
+  top: 20px;
+  right: 18px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -401,7 +406,7 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -409,9 +414,9 @@ p {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
   background-color: var(--color-dark-white);
 }
@@ -485,7 +490,7 @@ p {
 
 .contact__links i:hover {
   transform: scale(1.1);
-  color: var(--color-yellow);
+  color: var(--color-dark-pink);
 }
 
 /* scroll */
@@ -513,13 +518,30 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+      /* Font size */
+  --font-large: 30px;
+  --font-medium: 18px;
+  --font-regular: 16px;
+  --font-small: 14px;
+  --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 19px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-pink);
+  }
+
+  #navbar.navbar--dark{
+    padding: 16px;
   }
 
   .navbar__menu {
@@ -529,24 +551,78 @@ p {
     display: none;
   }
 
+  .navbar__menu.open {
+    display: block;
+  }
+
+  .section {
+    padding: 16px;
+    padding-top: 45px;
+  }
+
+  .home__avatar {
+    margin-top: 30px;
+  }
+  
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    padding: 10px;
+    margin: 4px 0;
+    width: 100%;
+  } 
+
+  .category__btn.selected .category__count,
+  .category__btn:hover .category__count {
+    opacity: 1;
+    top: 7px;
+  }
+
   .project {
     flex-grow: 1;
+  }
+
+  .testimonial {
+    display: flex;
+    margin: 32px 0;
+    flex-direction: column;
+    align-items: center;
   }
 
   .testimonial__avatar {
     width: 80px;
     height: 80px;
+  }
+
+  .testimonial__avatar:nth-child(odd),
+  .testimonial__avatar:nth-child(even)  {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
