@@ -42,7 +42,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// Handle click on the "arrow up" button
+// arrow up버튼 home으로 이동하기
 arrowUp.addEventListener("click", () => {
   scrollIntoView("#home");
 });
@@ -66,7 +66,7 @@ workBtnContainer.addEventListener("click", (event) => {
 
     projectContainer.classList.add("anim-out");
     setTimeout(() => {
-    // 프로젝트를 하나하나 가져와서 필터링 해준다.
+    // 프로젝트를 하나하나 가져와서 필터링 해주어 해당요소만 보여준다.
       projects.forEach((project) => {
         if (filter === "*" || filter === project.dataset.type) {
           project.classList.remove("invisible");
