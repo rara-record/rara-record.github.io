@@ -6,7 +6,7 @@ excerpt: ' '
 comments: true
 share: true
 tags: [JavaScript]
-date: 2021-07-22
+date: 2021-07-23
 ---
 
 ## IntersectionObserver() 
