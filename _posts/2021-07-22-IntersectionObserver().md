@@ -1,6 +1,6 @@
 ---
 layout: post
-title: data structure
+title: IntersectionObserver
 categories: [Reference]
 excerpt: ' '
 comments: true
