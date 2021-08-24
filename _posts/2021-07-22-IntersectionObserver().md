@@ -1,11 +1,13 @@
+---
 layout: post
-title: IntersectionObserver()
+title: data structure
 categories: [Reference]
 excerpt: ' '
 comments: true
 share: true
 tags: [JavaScript]
 date: 2021-07-22
+---
 
 ## IntersectionObserver() 
 
