@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+    name="description"
+    content="Vanilla Java Script Challenge 졸업 작품" />
+    <title>Momentum App</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- script -->
+    <script defer src="js/greetings.js"></script>
+    <script defer src="js/today.js"></script>
+    <script defer src="js/clock.js"></script>
+    <script defer src="js/quotes.js"></script>
+    <script defer src="js/background.js"></script>
+    <script defer src="js/todo.js"></script>
+    <script defer src="js/weather.js"></script>
+  </head>
+  <body>
+    <section id="main-screen">
+      <h1 class="h">Vanilla Java Script Challenge 졸업작품</h1>
+
+        <article id="left-screen">
+          <div>
+            <h1 class="title">보상 목록</h1>
+            <ul id="reward-list"></ul>
+          </div>
+
+    
+        </article>
+
+        <article id="mid-screen">
+          <h1 class="h">todo 퀘스트</h1>
+          <div class="top">
+            <!-- 랜덤명언 -->
+            <div class="quote">
+              <strong class="content"></strong>
+              <span class="author"></span>
+            </div>
+            <div class="today-quest">
+              <!-- 퀘스트폼 -->
+              <form id="quest-form" action="#" method="GET">
+                <fieldset>
+                  <legend class="h">Todo 퀘스트 작성 폼</legend>
+                    <article>
+                      <label for="quest">퀘스트</label>
+                      <input type="text" id="quest"required />
+                    </article>
+                    <article>
+                      <label for="reward">보상</label>
+                      <input type="text" id="reward"/>
+                    </article>
+                    <button type="submit" class=".submit-btn h"></button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div class="bottom">
+            <h2 class="title">퀘스트 목록</h2>
+            <!-- Todo퀘스트리스트 -->
+            <ul id="quest-list">
+            </ul>         
+          </div>
+
+        </article>
+
+        <article id="right-screen">
+          <h1 class="h">사용자 정보</h1>
+          <!-- 사용자 정보 -->
+          <div class="user-info">
+            <h2 class="today"></h2>
+            <div class="weather">
+              <span></span>
+              <span></span>
+            </div>
+            <h3 class="clock"></h3>
+            <h4 class="greeting">로그인이 필요합니다</h4>
+          </div>
+
+          <!-- 로그인폼 -->
+          <form 
+            id="login-form"
+            class="hidden" 
+            action="#" 
+            method="GET" 
+            name="login"
+            >
+            <fieldset>
+              <legend class="h">사용자 이름 입력</legend>
+              <input
+              id="login-input"
+              type="text"
+              placeholder="사용하실 닉네임을 적어주세요."
+              required
+              maxlength="5"
+              autocomplete="off"
+            />
+            </fieldset>
+        </form>
+        </article>
+    </section>
+  </body>
+</html>
