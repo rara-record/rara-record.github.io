@@ -1,0 +1,25 @@
+#left-screen {
+    width: 100%;
+    height: 100%;
+}
+
+#left-screen > div{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    list-style: none;
+    padding-left: 0;
+    border: 2px solid black;
+    overflow-y: auto;
+    min-height: 100px;
+}
+
+#left-screen .title {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    font: normal 22px/1 "Spoqa Han Sans Neo";
+    color: #fff;
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
