@@ -10,9 +10,9 @@
 
 - 빠르게 참고할 수 있도록 최대한 간결하게 정리합니다.
 
-## https://rara-record.github.io/Javascript_TodoList/
-- 노마드코더 자바스크립트 클론코딩 TODO-LIST 만들기
+## https://rara-record.github.io/javascript_todo/
+- 노마드코더 자바스크립트 TODO-LIST 만들기
 
 
 ## https://github.com/rara-record/rara-record.github.io/tree/master/portfolio_website
-- 드림코딩 자바스크립트 클론 코딩 반응형 포트폴리오 페이지 만들기
+- 드림코딩 자바스크립트 반응형 포트폴리오 페이지 만들기
