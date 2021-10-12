@@ -1,0 +1,91 @@
+/* quest ******************************************************************************/
+#mid-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#mid-screen .top {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+
+.top .quote {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid black;
+    overflow-y: auto;
+}
+
+.top .quote strong {
+    font: normal 20px/1.5 "Spoqa Han Sans Neo";
+    margin-bottom: 5px;
+}
+
+.top .quote .author {
+    font: normal 20px/1.5 "Spoqa Han Sans Neo";
+}
+
+.top .today-quest {
+    width: 100%;
+}
+
+.top #quest-form article {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.top #quest-form article label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    margin-right: 5px;
+}
+
+.top #quest-form article input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+}
+
+#mid-screen .bottom {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    list-style: none;
+    padding-left: 0;
+    border: 2px solid black;
+    overflow-y: auto;
+    min-height: 100px;
+}
+
+#mid-screen .bottom .title {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    font: normal 22px/1 "Spoqa Han Sans Neo";
+    color: #fff;
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#mid-screen .bottom .text-box span {
+    color: #fff;
+} 
+
+#mid-screen .bottom .text-box strong {
+    color: #badc58;
+} 
