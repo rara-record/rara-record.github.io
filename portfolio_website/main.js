@@ -69,7 +69,7 @@ workBtnContainer.addEventListener("click", (e) => {
       return;
     }
 
-    // 이전 버튼에 Sectioned를 없애고, 새로 클릭된 item에 sectioned 부여한다.
+    // 이전 버튼에 selected를 없애고, 새로 클릭된 item에 selected를 부여한다.
     const active = document.querySelector(".category__btn.selected"); 
     active.classList.remove("selected"); // 이전에 선택된 버튼에 selected를 지워준다
     const target = 
