@@ -10,7 +10,7 @@
 
 - 빠르게 참고할 수 있도록 최대한 간결하게 정리합니다.
 
-## https://rara-record.github.io/javascript_todo/
+## https://rara-record.github.io/javascript_todo
 - 노마드코더 자바스크립트 TODO-LIST 만들기
 
 
