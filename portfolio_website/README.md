@@ -16,7 +16,7 @@ HTML, CSS, Vanilla JS, 반응형 포트폴리오 웹사이트
 - navbar toggle 버튼
 - scrollIntoView 함수 활용 scroll smooth하게 만들기
 - 해당 버튼 클릭시 직관적으로 알 수 있도록 클릭한 요소에 background 넣기
-- IntersectionObserver를 사용한 페이지 스크롤 효과
+- section의 컨텐츠를 보여줄때, 해당 컨텐츠의 navbar의 menu-item active (IntersectionObserver API)
 
 ## 기간
 

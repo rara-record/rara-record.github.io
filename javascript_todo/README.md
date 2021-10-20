@@ -1,7 +1,7 @@
 
 
 WEB PAGE 🌟
-https://rara-record.github.io/momentum/
+https://rara-record.github.io/javascript_todo/
 
 # TODO LIST 
 
