@@ -47,16 +47,12 @@ function deleteReward(e) {
 });
 rewardArray = cleanArray;
 // 삭제한 li.id를 뺀 cleanArray 배열로 덮어 씌움 (const면 덮어씌울 수 없으므로 let으로 접근지정자 변경)
-saveReward();
+saveToDos();
 }
 
-// 퀘스트 목록을 저장
+// localStorage에 저장
 function saveToDos() {
   localStorage.setItem(QUEST_KEY, JSON.stringify(questArray));
-}
-
-// 보상 목록을 저장
-function saveReward() {
   localStorage.setItem(REWARD_KEY, JSON.stringify(rewardArray));
 }
 
@@ -172,7 +168,7 @@ function addReward(e) {
     }`,
   }
   rewardArray.push(rewardObj);
-  saveReward();
+  saveToDos();
   paintReward(rewardObj);
   deleteQuest(e);
 }
