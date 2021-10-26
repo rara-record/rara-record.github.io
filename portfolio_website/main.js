@@ -21,7 +21,7 @@ navbarMenu.addEventListener("click", (event)=> {
   }
   navbarMenu.classList.remove("open");
   scrollIntoView(link);
-  selectNavItem(target);
+  navItemActivate(target);
 });
 
 // Navbar toggle 버튼 
@@ -91,13 +91,7 @@ workBtnContainer.addEventListener("click", (e) => {
     }, 300);
   });
 
-  // Scroll 공용 함수
-  function scrollIntoView(selector) {
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior: "smooth"});
-  };
 
-  
   /* intersectionobserver 
   1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다.
   2. intersectionobserver를 이용해서 모든 섹션들을 관찰한다.
@@ -118,9 +112,11 @@ workBtnContainer.addEventListener("click", (e) => {
 
   // section과 navbar-menu-item을 받아와서 새로운 배열을 만든다.
   const sections = sectionIds.map(id => document.querySelector(id));
-  const navItems = sectionIds.map(id => 
-    document.querySelector(`[data-link="${id}"]`)
-    );
+  const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
+    console.log(sections)
+    console.log(navItems)
+
+
     
   // 선택된 메뉴 index
   let selectedNavIndex = 0;
@@ -128,7 +124,7 @@ workBtnContainer.addEventListener("click", (e) => {
   let selectedNavItem = navItems[0];
 
   // 새로운 메뉴 아이템을 선택해준다.
-  function selectNavItem(selected) {
+  function navItemActivate(selected) {
     // 먼저 선택된 메뉴 아이템에 active를 지운다.
     selectedNavItem.classList.remove("active");
     // "navItems"중에 선택된 인덱스 다시 할당
@@ -136,6 +132,13 @@ workBtnContainer.addEventListener("click", (e) => {
     // navItem에 active 추가
     selectedNavItem.classList.add("active"); 
   }
+
+  // Scroll 공용 함수
+  function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+    navItemActivate(navItems[sectionIds.indexOf(selector)]);
+  };
 
   // 옵션 지정
   const observerOptions = {
@@ -145,7 +148,7 @@ workBtnContainer.addEventListener("click", (e) => {
   };
 
   // entries를 돌면서 메뉴를 활성화 해준다.
-  const observerCallback = (entries, observer) => {
+  const observerCallback = (entries) => {
     entries.forEach((entry) => {
 
       // entry가 진입하지 않을때 처리한다.
@@ -180,6 +183,6 @@ workBtnContainer.addEventListener("click", (e) => {
       // 배열의 제일 마지막 index
       selectedNavIndex = navItems.length - 1;
     }
-    selectNavItem(navItems[selectedNavIndex]);
+    navItemActivate(navItems[selectedNavIndex]);
   });
 
