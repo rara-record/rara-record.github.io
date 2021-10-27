@@ -115,8 +115,6 @@ workBtnContainer.addEventListener("click", (e) => {
   const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
     console.log(sections)
     console.log(navItems)
-
-
     
   // 선택된 메뉴 index
   let selectedNavIndex = 0;
