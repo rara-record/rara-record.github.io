@@ -2,10 +2,9 @@ WEB PAGE 🌟
 https://rara-record.github.io/portfolio_website/
 
 # Portfolio_Website
-
+[!img](./portfolio.png)
 
 ## 기술
-
 HTML, CSS, Vanilla JS, 반응형 포트폴리오 웹사이트
 
 ## 기능
