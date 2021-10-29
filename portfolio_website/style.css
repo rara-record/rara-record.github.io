@@ -169,7 +169,7 @@ p {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 2px solid var(--color-light-white);
+  border: 10px solid var(--color-light-white);
   background-color: rgba(255, 255, 255, 0.5);
   overflow: hidden;
 }
@@ -530,13 +530,6 @@ p {
   opacity: 1;
   pointer-events: auto;
 } 
-
-/* text animation */
-section > div h1 {transition: all 0.6 ease-in-out;}
-section h2 {opacity: 0;}
-section  
-
-
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {

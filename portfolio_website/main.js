@@ -22,6 +22,7 @@ navbarMenu.addEventListener("click", (event)=> {
   navbarMenu.classList.remove("open");
   scrollIntoView(link);
   navItemActivate(target);
+  console.log(target)
 });
 
 // Navbar toggle 버튼 
